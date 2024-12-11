@@ -1,0 +1,569 @@
+/*Developer: Abdulai Umar Tijani (3360522)
+Tel: 05536342775 / 0248782542 */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    /* position: fixed; */
+    background-color: rgb(2, 2, 2);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: darkgrey;
+    cursor: default;
+    background-image: url("Images/backgroundPicture.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+}
+.FirstScreen {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+    transition: all 0.35s cubic-bezier(0.075, 0.82, 0.165, 1);
+    opacity: 1;
+    pointer-events: all;
+}
+.logo {
+    clip-path: polygon(0 45%, 10% 45%, 20% 0, 30% 75%, 40% 0, 50% 75%, 60% 0, 70% 80%, 80% 45%, 90% 45%, 90% 55%, 85% 55%, 70% 100%, 60% 20%, 50% 100%, 40% 20%, 30% 100%, 20% 20%, 15% 55%, 0 55%); 
+    height: 30px;
+    width:55px;
+    background-color: orangered;
+}
+.FirstScreen .heads {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5%;
+    color: orangered;
+}
+.FirstScreen .calcContainer {
+    background-color: rgb(34, 33, 33);
+    height: 90vh;
+    width: 45%;
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 0 rgb(26, 25, 25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    transform: translateY(-25px);
+    opacity: 1;
+    pointer-events: all;
+
+}
+.FirstScreen .calcContainer span:hover svg:not(.dot) {
+    fill: orangered;
+}
+.FirstScreen .calcContainer div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    background-color: rgb(48, 47, 47);
+    text-align: left;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.25s;
+    
+}
+.calcContainer div svg {
+    height: 1.2rem;
+    width: 1.2rem;
+    fill: grey;
+}
+.FirstScreen .calcContainer p {
+    font-weight: 500;
+    font-size: 90%;
+}
+.FirstScreen .calcContainer .butIcons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(7px);
+    
+}
+.FirstScreen .calcContainer .butIcons svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 5px;
+    fill: grey;
+    cursor: pointer;
+}
+.FirstScreen .calcContainer span:not(.butIcons) {
+    height: 1.5rem; 
+    margin-right: 5px;
+    fill: grey;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.FirstScreen .calcContainer span:not(.butIcons) svg {
+    height: 1.3rem;
+    width: 1.3rem;
+    fill: darkgrey;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+}
+.FirstScreen .calcContainer span:not(.butIcons) h3 {
+    margin: auto;            
+}
+.firstScreenOffJS {
+    transform: translateX(-20px) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+.FirstScreen .calcContainer div:hover {
+    width: calc(1.03 * 100%);
+}
+.FirstScreen .calcContainer div:hover svg {
+    fill: orangered;
+    animation: animateSvg 0.7s alternate infinite;
+}
+@keyframes animateSvg {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(10px);
+    }
+}
+.about {
+    background-color: rgb(22, 22, 22);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    gap: 5px;
+    width: 35%;
+    line-height: 150%;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border-radius: 20px;
+    opacity: 0;
+    pointer-events: none;
+}
+.about > div {
+    width: 100%;
+    transition: all 0.25s;
+}
+.about svg {
+    fill: darkgrey;
+    height: 2rem;
+    width: 2rem;
+    transform: translateY(-8px);
+}
+.about .closeAbout {
+    position: absolute;
+    fill: red;
+    scale: 0.8;
+    right: 8%;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+.about .closeAbout:active {
+    transform: scale(0.8);
+}
+.about .copyRight {
+    margin-top: 10px;
+}
+.aboutDisplayJS {
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
+.carrierConcentrationScreen, .slides_books {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: darkgrey;
+    width: fit-content;
+    position: absolute;
+    transform: translateY(30%);
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1;
+    & div{
+        cursor: pointer;
+        background-color: rgb(48, 47, 47);
+        padding: 20px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+        & div {
+            font-size: 95%;
+        }
+        & svg {
+            height: 1.4rem;
+            width: 1.4rem;
+            fill: darkgrey;
+            transition: all 0.15s;
+            @media (max-width: 425px) {
+                transform: rotate(90deg);
+            }
+        }
+        transition: all 0.25s;
+    }
+    & #iterativeAnalysis, #piecewiseAnalysis, #ShockelyDiodeEqn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    } 
+    & div:not(.extrinsicTypes, .pOrNHoleAndElectConc, .pOrNHoleAndElectConc2):hover {
+        background-color: rgb(61, 61, 61);
+    }
+    & div:not(:first-child):hover {
+        & svg {
+            fill: orangered;
+            transform: translateX(10px);
+            @media (max-width: 425px) {
+                transform: rotate(90deg) translateX(10px);
+            }
+        }
+    }
+    & div:not(.extrinsicTypes, .extrinsicSemiconductor, .pOrNHoleAndElectConc, .pOrNHoleAndElectConc2):active {
+        scale: 0.9;
+    }
+    & .extrinsicTypes, .pOrNHoleAndElectConc, .pOrNHoleAndElectConc2 {
+        width: 105px;
+        position: absolute;
+        flex-direction: column;
+        left: 100.3%;
+        top: 52%;
+        padding: 0;
+        gap: 0;
+        opacity: 0;
+        pointer-events: none;
+        @media (max-width: 425px) {
+            left: 0;
+            top: 70%;
+        }
+        & span {
+            padding: 15px;
+            text-align: center;
+            width: 105px;
+            display: flex;
+            flex-direction: row;
+            transition: all 0.15s;
+            & svg {
+                height: 1.1rem;
+                width: 1.1rem;
+            }   
+        }
+        & span:first-child {
+            border-bottom: 1px solid grey;
+        }
+        & span:hover {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-color: rgb(61, 61, 61);
+        }
+        & span:not(:first-child):hover {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+    & .pOrNHoleAndElectConc, .pOrNHoleAndElectConc2 {
+        width: 140px;
+        & span {
+            transition: all 0.15s;
+            width: 140px;
+            padding: 10px;
+        }
+        & span:active {
+            background-color: rgb(88, 88, 88);
+        }
+    }
+    & .pOrNHoleAndElectConc {
+        top: 0%;
+        @media (max-width: 425px) {
+            top: -8%;
+            left: 100%;
+        }
+    }
+    & .pOrNHoleAndElectConc2 {
+        top: 50%;
+        @media (max-width: 425px) {
+            top: 42%;
+            left: 100%;
+        }
+    }
+}
+.showExtrinsicTypesJS {
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
+.showCarrierConcScreen {
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
+.shiftFirstScreenJS {
+    transform: translateX(-30%) !important;
+}
+.calcSpace {
+    height: 90vh;
+    width: 35vw;
+    position: absolute;
+    margin-top: auto;
+    transform: translateX(0);
+    opacity: 0;
+    pointer-events: none;
+    background-color: rgb(46, 46, 46);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.25s;
+}
+.calcSpace h3 {
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(-23vh);
+}
+.calcSpace h5 {
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(-23vh);
+}
+.calcSpace input {
+    height: 35px;
+    width: 250px;
+    border: none;
+    border-radius: 2px;
+    background-color: darkslategrey;
+    outline: none;
+    padding: 10px;
+    color: lightblue;
+    font-size: large;
+    margin: auto;
+}
+.calcSpace div:not(:last-child) {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+.calcSpace p {
+    text-align: center;
+}
+.calcSpace .calculate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(30px);
+}
+.calcSpace .calculate input{
+    width: 110px;
+    cursor: pointer;
+    transition: all 0.25s;
+    font-weight: bold;
+    background-color: grey;
+}
+.calcSpace .calculate input:hover {
+    width: 125px;
+    background-color: orangered;
+    color: white;
+}
+.calcSpace .calculate input:active {
+    scale: 0.8;
+}
+.calcSpace span:hover .back2{
+    fill: orangered;
+}
+.calcSpace .back2 {
+    position: absolute;
+    top: 5%;
+    left: 4%;
+    fill: darkgrey;
+    height: 1.3rem;
+    width: 1.3rem;
+    cursor: pointer;
+}
+.shiftCalcSpaceJS {
+    left: 15%  !important;
+}
+.outputSpace {
+    height: 90vh;
+    width: 35vw;
+    position: absolute;
+    left: 50%;
+    opacity: 0;
+    pointer-events: none;
+    background-color: rgb(46, 46, 46);
+    scale: 0.3;
+    transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border-left: 1px solid darkgrey;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.outputSpace h3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-30vh);
+}
+.outputSpace div {
+    display: flex;
+    align-items: center;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+.outputSpace .resultDisplay {
+    font-weight: bold;
+    font-size: large;
+    color: goldenrod;
+    text-align: center;
+}
+.outputSpace .back3 {
+    position: absolute;
+    fill: darkgrey;
+    top: 5%;
+    left: 20px;
+    width: 1.3rem;
+    height: 1.3rem;
+    opacity: 0;
+    pointer-events: none;
+    text-align: center;
+    cursor: pointer;
+}
+.outputSpace .back3:hover {
+    fill: orangered;
+}
+.outputSpace .resultDisplayAddInfo {
+    text-align: center;
+} 
+.outputSpaceShowJS {
+    opacity: 1 !important;
+    scale: 1 !important;
+}
+.outputSpaceJS {
+    width: 90% !important;
+    transform: translateX(-50%);
+}
+.calcSpaceJS {
+    width: 90% !important;
+}
+/* Media Queries */
+@media (max-width: 375px) {
+    .butIcons {
+        transform: translateY(-25px);
+    }
+}
+@media (max-width: 445px) {
+    .FirstScreen .calcContainer {
+        width: 110%;
+        height: 75vh;
+        transform: translateY(0);
+        & span {
+            & h3 {
+                transform: translateY(10px);
+            }
+        }
+    }
+    .FirstScreen .heads {
+        transform: translateY(-25px);
+        font-size: small;       
+    }
+    .about {
+        width: 90vw;
+        height: 50%;
+    }
+    .carrierConcentrationScreen, .slides_books {
+        transform: translateY(7%);
+        & div {
+            transform: translateY(3vh);
+        }
+    }    
+    .calcSpace {
+        width: 90%;
+        margin: auto;
+    }
+}
+@media (max-width: 768px) and (min-width: 446px) {
+    .FirstScreen .calcContainer {
+        width: 80%;
+        height: 92vh;
+        transform: translateY(0);
+        & span {
+            & h3 {
+                transform: translateY(10px);
+            }
+        }
+    }
+    .calcSpace {
+        width: 48vw;           
+    }
+    .outputSpace {
+        width: 48vw;
+    }
+    .about {
+        width: 60vw;
+        height: 50%;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .FirstScreen .calcContainer {
+        width: 60%;
+        height: 100vh;
+        transform: translateY(0);
+    }
+    .calcSpace {
+        width: 48vw;           
+    }
+    .outputSpace {
+        width: 48vw;
+    }
+    .about {
+        width: 40vw;
+    }
+}
+@media (max-width: 614px) {
+    .back3 {
+        opacity: 1 !important;
+        pointer-events: all !important;
+    }
+}
+@media (max-width: 419px) {
+    .butIcons {
+        transform: translateY(-3px) !important;
+    }
+}
+/*Developer: Abdulai Umar Tijani (3360522)
+Tel: 05536342775 / 0248782542 */
